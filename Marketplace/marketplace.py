@@ -15,3 +15,27 @@ class Item:
     # class holds the methods
     class Methods:
         fund = Bytes("Fund")
+    # method creates a product
+    def app_creation(self):
+        return Seq(
+            # requires 5 app args for call
+            Assert(Txn.application_args.length() == Int(5)),
+            # requires note
+            Assert(Txn.note() == Bytes("marketplace:uv1")),
+            # requires price is greater than zero
+            Assert(Btoi(Txn.application_args[4]) > Int(0)),
+            # supplier is zeroth app arg
+            App.globalPut(self.Vars.supplier, Txn.application_args[0]),
+            # name is first app arg
+            App.globalPut(self.Vars.name, Txn.application_args[1]),
+            # image is second app arg
+            App.globalPut(self.Vars.image, Txn.application_args[2]),
+            # description is third app arg
+            App.globalPut(self.Vars.description, Txn.application_args[3]),
+            # price is the fourth app arg
+            App.globalPut(self.Vars.price, Txn.application_args[4]),
+            # intiializes the sold var to zero sold
+            App.globalPut(self.Vars.sold, Int(0)),
+            # approves the sequence
+            Return(Int(1)),
+        )
