@@ -15,6 +15,10 @@ class Item:
     # class holds the methods
     class Methods:
         fund = Bytes("Fund")
+    # method for sending the cart to crowdfund
+    def fund(self):
+        # assign the first app arg to count
+        amount = Txn.application_args[1]
     # method creates a product
     def app_creation(self):
         return Seq(
