@@ -12,3 +12,6 @@ class Item:
         description = Bytes("Description")
         price = Bytes("Price")
         sold = Bytes("Sold")
+    # class holds the methods
+    class Methods:
+        fund = Bytes("Fund")
