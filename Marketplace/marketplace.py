@@ -47,3 +47,13 @@ class Item:
     def app_delete(self):
         # only allows deletion of item if caller is app creator
         return Return(Txn.sender() == Global.creator_address())
+        # application start method
+    def app_start(self):
+        return Cond(
+            # calls app create method if app doesn't exist
+            [Txn.application_id() == Int(0), self.app_creation()],
+            # if the txn type is delete then delete app
+            [Txn.on_completion() == OnComplete.DeleteApplication, self.app_delete()],
+            # if the zeroth app arg is fund, call the fund method
+            [Txn.application_args[0] == self.Methods.fund, self.fund()],
+        )
