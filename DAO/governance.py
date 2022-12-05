@@ -94,13 +94,13 @@ def approval_program():
             ),
             # check the local state of the voter and add to the global count
             If(Vote is for A increment A)
-            + 1
+                then add + 1 to A
             If(Vote is for B increment B)
-            + 1 
+                then add + 1 to B
             If(Vote is for C increment C)
-            + 1
+                then add + 1 to C
             If(Vote is for D increment D)
-            + 1
+                then add + 1 to D
 
             # next the vote of the txn sender is retrieved
             get_vote_of_sender,
