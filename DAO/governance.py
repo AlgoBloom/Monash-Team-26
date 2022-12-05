@@ -92,6 +92,11 @@ def approval_program():
                     Global.round() <= App.globalGet(Bytes("VoteEnd")),
                 )
             ),
+            If(Vote is for A increment A)
+            If(Vote is for B increment B)
+            If(Vote is for C increment C)
+            If(Vote is for D increment D)
+
             # next the vote of the txn sender is retrieved
             get_vote_of_sender,
             # if the vote exists then we continue executing the sequence
