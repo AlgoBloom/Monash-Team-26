@@ -92,10 +92,15 @@ def approval_program():
                     Global.round() <= App.globalGet(Bytes("VoteEnd")),
                 )
             ),
+            # check the local state of the voter and add to the global count
             If(Vote is for A increment A)
+            + 1
             If(Vote is for B increment B)
+            + 1 
             If(Vote is for C increment C)
+            + 1
             If(Vote is for D increment D)
+            + 1
 
             # next the vote of the txn sender is retrieved
             get_vote_of_sender,
