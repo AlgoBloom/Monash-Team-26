@@ -102,6 +102,8 @@ def approval_program():
             If(Vote is for D increment D)
                 then add + 1 to D
 
+            # need to get the local state of the user and check if it is a board member
+
             # next the vote of the txn sender is retrieved
             get_vote_of_sender,
             # if the vote exists then we continue executing the sequence
