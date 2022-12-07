@@ -103,6 +103,12 @@ def approval_program():
                 then add + 1 to D
 
             # need to get the local state of the user and check if it is a board member
+            check state for first nft board member
+            check state for second nft board member
+            check state for third nft board member
+            check state for fourth nft board member
+            check state for fifth nft board member
+
 
             # next the vote of the txn sender is retrieved
             get_vote_of_sender,
