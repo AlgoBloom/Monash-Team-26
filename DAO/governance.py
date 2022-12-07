@@ -109,6 +109,8 @@ def approval_program():
             check state for fourth nft board member
             check state for fifth nft board member
 
+            # need to check to see if they have a voting coin
+            check local state for sender account to see if they have a voting token
 
             # next the vote of the txn sender is retrieved
             get_vote_of_sender,
